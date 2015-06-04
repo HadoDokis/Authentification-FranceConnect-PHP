@@ -101,7 +101,7 @@ class FranceConnect {
 		$result = $curlWrapper->get($token_url);
 		if ($curlWrapper->getHTTPCode() != 200){
 			if (! $result){
-				throw new Exception($this->curlWrapper->getLastError());
+				throw new Exception($curlWrapper->getLastError());
 			} 
 			$result_array = json_decode($result,true);
 			throw new Exception($result_array['error']);
